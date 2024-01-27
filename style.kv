@@ -1,0 +1,169 @@
+<Button>:
+    font_name: 'JetMonoBold.ttf'
+    font_size: 36
+    background_color: 20/255, 50/255, 240/255
+<Label>:
+    font_size: 36
+    font_name: 'JetMonoBold.ttf'
+<TextInput>:
+    font_size: 36
+    font_name: 'JetMonoBold.ttf'
+    background_color: 0.03,0.03,0.03,1
+    foreground_color: 1,1,1,1
+    multiline: False
+ScreenManager:
+    id: screen_manager
+    Screen:
+        name: 'main'
+        Label:
+            text: '👾Solis👾'
+            foreground_color: 1,1,1,1
+            pos_hint: {'y': 0.4}
+        Button:
+            color: 0,1,1,1
+            text: 'profile'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.1}
+            on_release:
+                app.screen('profile')
+        Button:
+            text: 'energy'
+            color: 1,1,0,1
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.3}
+            on_release:
+                app.screen('energy')
+        Button:
+            text: 'library'
+            color: 1,0,1,1
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.5}
+            on_release:
+                app.screen('library')
+    #'''                    SCREEN - profile                   '''
+    #   functions --- [str(58) - save]; [str(64; 72) - screen];
+    # name:      profile
+    #   moduls --- TextInput; Button
+    Screen:
+        name: 'profile'
+        TextInput:
+            id: name
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.9}
+            hint_text: 'Name'
+        TextInput:
+            id: mass
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.75}
+            hint_text: 'mass'
+        Button:
+            text: 'save'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.5}
+            on_press:
+                app.save()
+        Button:
+            text: 'back'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.1}
+            on_press:
+                app.screen('main')
+    Screen:
+        name: 'energy'
+        TextInput:
+            id: name_mar
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.9}
+            hint_text: 'Name path'
+        Button:
+            text: 'speed'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.45}
+            on_press:
+                app.speed_speed()
+        Button:
+            text: 'source'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.6}
+            on_press:
+                app.source()
+        Button:
+            text: 'back'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.1}
+            on_press:
+                app.screen('main')
+    #'''                     SCREEN - library              '''
+    #   functions --- [(str 85) - screen]; [(str 91) - pos_save];
+    # name:     library
+    #   moduls --- Button; TextInput;
+    Screen:
+        name: 'library'
+        Button:
+            text: 'back'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.1}
+            on_press:
+                app.back_save()
+            on_release:
+                app.screen('main')
+        Button:
+            text: 'save'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.25}
+            on_press:
+                app.pos_save()
+        TextInput:
+            id: position
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.6}
+            hint_text: 'Position'
+        TextInput:
+            id: name_path
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.5}
+            hint_text: 'Name path'
+        TextInput:
+            id: a
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.9}
+            hint_text: 'A'
+        TextInput:
+            id: b
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.7}
+            hint_text: 'B'
+    Screen:
+        name: 'library_bat'
+        Button:
+            text: 'back'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.1}
+            on_press:
+                app.screen("main")
+        Button:
+            text: 'calculate'
+            size_hint: 0.7,0.1
+            pos_hint: {'x': 0.15, 'y': 0.25}
+            on_press:
+                app.dada()
+        TextInput:
+            id: position_bat
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.6}
+            hint_text: 'Position'
+        TextInput:
+            id: name_path_bat
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.5}
+            hint_text: 'Name path'
+        TextInput:
+            id: a_bat
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.9}
+            hint_text: 'A'
+        TextInput:
+            id: b_bat
+            size_hint: 1,0.1
+            pos_hint: {'top': 0.7}
+            hint_text: 'B'
